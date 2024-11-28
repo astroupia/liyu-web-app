@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { NAVIGATION_ITEMS } from '@/lib/constants';
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { NAVIGATION_ITEMS } from "@/lib/constants";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +24,10 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-gray-700 hover:text-[#E8982E] transition-colors ${
-                  item.name === 'Book Now'
-                    ? 'bg-[#532516] text-white px-4 py-2 rounded-md hover:bg-[#E8982E]'
-                    : ''
+                className={`text-gray-700 hover:text-[#532516] transition-colors ${
+                  item.name === "Book Now"
+                    ? "bg-[#532516] text-white px-4 py-2 rounded-md hover:bg-[#E8982E]"
+                    : ""
                 }`}
               >
                 {item.name}
@@ -43,7 +43,11 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
