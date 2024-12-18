@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import HeroImage from "@/app/assets/Hero-Image.jpg";
 import Image from "next/image";
 export function HeroSection() {
   return (
@@ -10,7 +10,7 @@ export function HeroSection() {
         style={{ width: "100%", height: "100vh" }}
       >
         <Image
-          src={"@/assets/Hero-Image.JPG"}
+          src={HeroImage}
           alt="Hero Image"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
