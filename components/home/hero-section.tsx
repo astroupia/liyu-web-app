@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+import Image from "next/image";
 export function HeroSection() {
   return (
     <div className="relative min-h-screen flex items-center">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={"assets/Hero-Image.JPG"}
+          alt="Hero Image"
+          objectFit="cover"
+          objectPosition="center"
+        />
+
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
