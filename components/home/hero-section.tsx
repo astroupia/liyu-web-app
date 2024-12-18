@@ -5,12 +5,15 @@ import Image from "next/image";
 export function HeroSection() {
   return (
     <div className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 z-0">
+      <div
+        className="absolute inset-0 z-0"
+        style={{ width: "100%", height: "100vh" }}
+      >
         <Image
-          src={"assets/Hero-Image.JPG"}
+          src={"@/assets/Hero-Image.JPG"}
           alt="Hero Image"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
 
         <div className="absolute inset-0 bg-black/50" />
