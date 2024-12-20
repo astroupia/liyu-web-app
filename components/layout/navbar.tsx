@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
+import Image from "next/image";
+import Icon from "@/public/assets/images/Icon.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +15,15 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-[#532516]">Liyu</span>
-            <span className="text-[#E8982E] text-2xl font-bold">Catering</span>
-          </Link>
+          <div className="flex justify-between items-center">
+            <Image src={Icon} width={50} height={50} alt="Logo" />
+            <Link href="/" className="m-3 flex items-center space-x-2">
+              <span className="text-2xl font-bold text-[#532516]">Liyu</span>
+              <span className="text-[#E8982E] text-2xl font-bold">
+                Catering
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
