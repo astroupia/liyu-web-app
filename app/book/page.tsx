@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Navbar } from '@/components/layout/navbar';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { BookingForm } from '@/components/book/booking-form';
-import { ContactInfo } from '@/components/book/contact-info';
-import { Expectations } from '@/components/book/expectations';
+import { useState } from "react";
+import { Navbar } from "@/components/layout/navbar";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { BookingForm } from "@/components/book/booking-form";
+import { ContactInfo } from "@/components/book/contact-info";
+import { Expectations } from "@/components/book/expectations";
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -26,8 +26,8 @@ export default function BookPage() {
               Book Your Event
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Let us help you create an unforgettable experience. Fill out the form
-              below and we'll get back to you within 24 hours.
+              Let us help you create an unforgettable experience. Fill out the
+              form below and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
 
@@ -39,8 +39,8 @@ export default function BookPage() {
                     Thank You for Your Inquiry!
                   </h2>
                   <p className="text-gray-600 mb-4">
-                    We've received your request and will contact you within 24 hours
-                    to discuss your event details.
+                    We&apos;ve received your request and will contact you within
+                    24 hours to discuss your event details.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}

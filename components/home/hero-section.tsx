@@ -1,18 +1,21 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
+import HeroImage from "@/app/assets/heroimage.jpg";
+import Image from "next/image";
 export function HeroSection() {
   return (
     <div className="relative min-h-screen flex items-center">
       <div
         className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        style={{ width: "100%", height: "100vh" }}
       >
+        <Image
+          src={HeroImage}
+          alt="Hero Image"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+
         <div className="absolute inset-0 bg-black/50" />
       </div>
 

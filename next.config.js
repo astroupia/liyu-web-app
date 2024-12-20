@@ -1,10 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
+  images: {
+    domains: [], // Add external domains if using remote images
   },
-  images: { unoptimized: true },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: "asset",
+    });
+    return config;
+  },
 };
 
 module.exports = nextConfig;
