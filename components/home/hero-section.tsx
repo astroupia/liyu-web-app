@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import HeroImage from "@/app/assets/heroimage.jpg";
+import HeroImage from "@/public/assets/images/hero.png";
 import Image from "next/image";
 export function HeroSection() {
   return (
@@ -13,7 +13,12 @@ export function HeroSection() {
           src={HeroImage}
           alt="Hero Image"
           fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3")',
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
 
         <div className="absolute inset-0 bg-black/50" />
