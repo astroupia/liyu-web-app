@@ -1,6 +1,6 @@
-import { Card } from '@/components/ui/card';
-import { PREVIOUS_EVENTS } from '@/lib/constants';
-import { Calendar, Quote } from 'lucide-react';
+import { Card } from "@/components/ui/card";
+import { PREVIOUS_EVENTS } from "@/lib/constants";
+import { Calendar, Quote } from "lucide-react";
 
 export function PreviousEvents() {
   return (
@@ -11,8 +11,8 @@ export function PreviousEvents() {
             Our Success Stories
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Take a look at some of our previous events and see why clients choose
-            Liyu Catering for their special occasions.
+            Take a look at some of our previous events and see why clients
+            choose Liyu Catering for their special occasions.
           </p>
         </div>
 
@@ -23,8 +23,8 @@ export function PreviousEvents() {
                 className="h-48 w-full"
                 style={{
                   backgroundImage: `url(${event.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
               />
               <div className="p-6">
@@ -41,7 +41,7 @@ export function PreviousEvents() {
                     <Quote className="w-5 h-5 text-[#E8982E] mr-2 flex-shrink-0" />
                     <div>
                       <p className="text-gray-600 italic text-sm">
-                        "{event.testimonial}"
+                        &quot;{event.testimonial}&quot;
                       </p>
                       <p className="text-[#532516] font-semibold mt-2">
                         - {event.client}
