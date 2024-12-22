@@ -15,7 +15,11 @@ import { useState } from "react";
 import { createBooking } from "@/lib/actions/booking.actions"; // Import the createBooking function
 import { IBooking } from "@/lib/models/booking";
 
-export function BookingForm() {
+interface BookingFormProps {
+  onSubmithandler: (e: React.FormEvent) => void;
+}
+
+export function BookingForm({ onSubmithandler }: BookingFormProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -51,6 +55,7 @@ export function BookingForm() {
           details: "",
         });
         alert("Booking submitted successfully!");
+        onSubmithandler(e);
       } else {
         alert("Failed to submit booking. Please try again.");
       }
