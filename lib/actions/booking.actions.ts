@@ -1,3 +1,4 @@
+"use server";
 import { connectDB } from "../db";
 import { IBooking, Booking } from "../models/booking";
 

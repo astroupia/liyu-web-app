@@ -14,11 +14,8 @@ import {
 import { useState } from "react";
 import { createBooking } from "@/lib/actions/booking.actions"; // Import the createBooking function
 import { IBooking } from "@/lib/models/booking";
-interface BookingFormProps {
-  onSubmit: (e: React.FormEvent) => void;
-}
 
-export function BookingForm({ onSubmit }: BookingFormProps) {
+export function BookingForm() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,13 +39,23 @@ export function BookingForm({ onSubmit }: BookingFormProps) {
       };
 
       const savedBooking = await createBooking(bookingData);
-
       if (savedBooking) {
-        onSubmit(e);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          eventType: "",
+          eventDate: "",
+          guestCount: "",
+          details: "",
+        });
+        alert("Booking submitted successfully!");
       } else {
         alert("Failed to submit booking. Please try again.");
       }
     } catch (error) {
+      console.error("Booking error:", error);
       alert("An error occurred. Please try again.");
     }
   };
