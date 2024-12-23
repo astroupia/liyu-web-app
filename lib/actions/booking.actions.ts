@@ -38,3 +38,26 @@ const createBooking = async ({
 };
 
 export { createBooking };
+
+export const getBooking = async () => {
+  try {
+    await connectDB();
+    const bookings: IBooking[] = await Booking.find();
+    const formatedbooking = bookings?.map((booking: any) => ({
+      firstName: booking.firstName,
+      lastName: booking.lastName,
+      email: booking.email,
+      phone: booking.phone,
+      eventType: booking.eventType,
+      eventDate: booking.eventDate,
+      guestCount: booking.guestCount,
+      details: booking.details,
+      status: booking.status,
+      createdAt: booking.createdAt,
+    }));
+    return formatedbooking;
+  } catch (error) {
+    console.log(`something went wrong`, error);
+    return [];
+  }
+};
