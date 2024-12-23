@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const bookingSchema = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   email: { type: String, required: true },
@@ -17,8 +17,12 @@ export const bookingSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export const Booking =
-  mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
+// Fix for "Booking" model initialization
+const Booking =
+  (mongoose.models?.Booking as mongoose.Model<IBooking>) ||
+  mongoose.model("Booking", bookingSchema);
+
+export { Booking };
 
 export interface IBooking {
   firstName: string;
