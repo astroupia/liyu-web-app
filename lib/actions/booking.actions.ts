@@ -43,7 +43,7 @@ export const getBooking = async () => {
   try {
     await connectDB();
     const bookings: IBooking[] = await Booking.find();
-    const formatedbooking = bookings?.map((booking: any) => ({
+    const formatedbooking = bookings?.map((booking: IBooking) => ({
       firstName: booking.firstName,
       lastName: booking.lastName,
       email: booking.email,
