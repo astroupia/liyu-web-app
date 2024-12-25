@@ -1,7 +1,10 @@
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Admin, { IAdmin } from "@/lib/models/admin";
+
+const secret = process.env.JWT_SECRET;
 
 export async function POST(req: Request) {
   try {
@@ -37,9 +40,16 @@ export async function POST(req: Request) {
         { status: 401 },
       );
     }
-
+    const token = jwt.sign(
+      {
+        id: admin._id,
+        userName: admin.userName,
+      },
+      secret as string,
+      { expiresIn: "5hr" },
+    );
     return NextResponse.json(
-      { success: true, message: "Login successful" },
+      { success: true, message: "Login successful", token },
       { status: 200 },
     );
   } catch (error: unknown) {

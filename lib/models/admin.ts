@@ -6,6 +6,7 @@ const AdminSchema = new Schema({
 });
 
 export interface IAdmin {
+  _id: string;
   userName: string;
   password: string;
 }
