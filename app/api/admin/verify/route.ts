@@ -28,7 +28,7 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     return NextResponse.json(
-      { sucess: false, message: "Verification Faild" },
+      { sucess: false, message: "Verification Failed" },
       { status: 400 },
     );
   } catch (error: unknown) {
