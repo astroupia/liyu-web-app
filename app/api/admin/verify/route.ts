@@ -26,6 +26,10 @@ export async function POST(req: Request) {
         { status: 200 },
       );
     }
+    return NextResponse.json(
+      { sucess: false, message: "Verification Faild" },
+      { status: 400 },
+    );
   } catch (error: unknown) {
     if (error instanceof JsonWebTokenError) {
       return NextResponse.json(
