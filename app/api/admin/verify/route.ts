@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import jwt, { JsonWebTokenError } from "jsonwebtoken";
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<Response> {
   try {
     const body = await req.json();
     const { token } = body;
@@ -26,6 +26,7 @@ export async function POST(req: Request) {
         { status: 200 },
       );
     }
+
     return NextResponse.json(
       { sucess: false, message: "Verification Faild" },
       { status: 400 },
