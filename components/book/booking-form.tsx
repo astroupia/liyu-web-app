@@ -37,7 +37,7 @@ export function BookingForm({ onSubmithandler }: BookingFormProps) {
       const bookingData: IBooking = {
         ...formData,
         eventDate: new Date(formData.eventDate),
-        guestCount: parseInt(formData.guestCount, 10),
+        guestCount: parseInt(formData.guestCount),
         status: "pending",
         createdAt: new Date(),
       };
@@ -66,7 +66,7 @@ export function BookingForm({ onSubmithandler }: BookingFormProps) {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
