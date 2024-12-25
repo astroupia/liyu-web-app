@@ -24,6 +24,29 @@ export default function AdminPage() {
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      VerifyToken(token);
+    }
+  }, []);
+
+  const VerifyToken = async (token: string) => {
+    try {
+      const tokres = await fetch("api/admin/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      if (tokres.ok) {
+        setIsAuthenticated(true);
+        fetchBookings();
+      } else {
+        localStorage.remove("token");
+        setIsAuthenticated(false);
+      }
+    } catch (error) {}
+  };
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -32,10 +55,11 @@ export default function AdminPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userName, password }),
       });
-      console.log(res);
 
+      const data = await res.json();
       if (res.ok) {
         setIsAuthenticated(true);
+        localStorage.setItem("token", data.token);
         fetchBookings();
       } else {
         alert("Invalid credentials");
