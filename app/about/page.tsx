@@ -36,11 +36,24 @@ export default function AboutPage() {
                 Crafting Memorable Experiences
               </h2>
               <p className="text-gray-600 mb-6">
-                At Liyu Catering, we believe that every event deserves
-                exceptional food and service. Our journey began with a simple
-                passion for creating unforgettable dining experiences, and
-                today, we&apos;re proud to be one of the most trusted catering
-                services in the region.
+                My name is Hiwot Zikie. I was born in Addis Ababa, Ethiopia. I
+                grew up with my grandmother. My passion for cooking began at a
+                young age, starting with helping my grandmother and aunties
+                while they are cooking and watching them cook that created the
+                passion in me which I applied it when playing outside I was
+                always cooking using different kinds of plants and leafs and
+                invite over family members and friends to come over to eat. As I
+                get older my family trusting me to cook for the family dinner or
+                any events their feedbacks after eating encourages me a lot and
+                that it becomes my passion to serve others. Liyu catering had
+                been conceived after I moved to the USA. Sine 2010 While
+                balancing motherhood and full time job I have been catering
+                Ethiopian food and other international food for family and close
+                friends. Throughout my 15+ years career in the hospitality,
+                catering, and restaurant industries, I have always been driven
+                by a desire to create my own legacy. My mission is to deliver
+                high quality food and to provide an exceptional service that
+                elevates your event at affordable prices.
               </p>
               <p className="text-gray-600 mb-8">
                 Our team of experienced chefs and event professionals work
