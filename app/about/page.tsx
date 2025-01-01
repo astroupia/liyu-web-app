@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
-import { Heart, Users, Clock, Award } from "lucide-react";
+import { Utensils, Heart, Globe, Award } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -15,87 +15,89 @@ export default function AboutPage() {
               Our Story
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Bringing culinary excellence and exceptional service to every
-              event since 2010.
+              A journey from Ethiopian kitchen
             </p>
           </div>
 
-          {/* Main Content */}
+          {/* Founder Story */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div
-              className="relative h-[400px] rounded-lg overflow-hidden"
+              className="relative h-[500px] rounded-lg overflow-hidden"
               style={{
                 backgroundImage:
-                  'url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3")',
+                  'url("https://images.unsplash.com/photo-1576867757603-05b134ebc379?ixlib=rb-4.0.3")',
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             />
             <div>
-              <h2 className="text-3xl font-bold text-[#532516] mb-4">
-                Crafting Memorable Experiences
+              <h2 className="text-3xl font-bold text-[#532516] mb-6">
+                Meet Hiwot Zikie
               </h2>
-              <p className="text-gray-600 mb-6">
-                My name is Hiwot Zikie. I was born in Addis Ababa, Ethiopia. I
-                grew up with my grandmother. My passion for cooking began at a
-                young age, starting with helping my grandmother and aunties
-                while they are cooking and watching them cook that created the
-                passion in me which I applied it when playing outside I was
-                always cooking using different kinds of plants and leafs and
-                invite over family members and friends to come over to eat. As I
-                get older my family trusting me to cook for the family dinner or
-                any events their feedbacks after eating encourages me a lot and
-                that it becomes my passion to serve others. Liyu catering had
-                been conceived after I moved to the USA. Sine 2010 While
-                balancing motherhood and full time job I have been catering
-                Ethiopian food and other international food for family and close
-                friends. Throughout my 15+ years career in the hospitality,
-                catering, and restaurant industries, I have always been driven
-                by a desire to create my own legacy. My mission is to deliver
-                high quality food and to provide an exceptional service that
-                elevates your event at affordable prices.
-              </p>
-              <p className="text-gray-600 mb-8">
-                Our team of experienced chefs and event professionals work
-                tirelessly to ensure that every detail is perfect, from the menu
-                planning to the final presentation. We source only the finest
-                ingredients and craft each dish with care and attention to
-                detail.
-              </p>
-              <Button asChild className="bg-[#532516] hover:bg-[#E8982E]">
-                <Link href="/book">Start Planning Your Event</Link>
-              </Button>
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  Born in the vibrant city of Addis Ababa, Ethiopia, my culinary
+                  journey began in my grandmother&apos;s kitchen. Those early
+                  days of helping her and my aunties prepare traditional
+                  Ethiopian dishes planted the seeds of what would become my
+                  life&apos;s passion.
+                </p>
+                <p>
+                  As a child, my love for cooking manifested in playful ways -
+                  creating imaginative dishes from plants and leaves, hosting
+                  little gatherings for family and friends. These childhood
+                  games were the first signs of my future calling.
+                </p>
+                <p>
+                  Since moving to the USA in 2010, I&apos;ve balanced motherhood
+                  and a full-time career while pursuing my passion for catering.
+                  Drawing from my Ethiopian heritage and international culinary
+                  experiences, I&apos;ve spent over 15 years in the hospitality,
+                  catering, and restaurant industries.
+                </p>
+                <p className="font-medium text-[#532516]">
+                  Today, Liyu Catering is the realization of my dream to create
+                  a legacy that combines high-quality, affordable cuisine with
+                  exceptional service.
+                </p>
+                <Button asChild className="bg-[#E8982E] hover:bg-[#E8982E]/90">
+                  <Link href="/book">Plan Your Event</Link>
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Values Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
               {
                 icon: Heart,
                 title: "Passion",
-                description: "We pour our heart into every dish we create.",
+                description:
+                  "Every dish is crafted with love and dedication, just like in my grandmother's kitchen.",
               },
               {
-                icon: Users,
-                title: "Teamwork",
-                description: "Our dedicated team works in perfect harmony.",
+                icon: Globe,
+                title: "Heritage",
+                description:
+                  "Blending Ethiopian traditions with international flavors.",
               },
               {
-                icon: Clock,
-                title: "Reliability",
-                description: "Consistently delivering excellence on time.",
+                icon: Utensils,
+                title: "Quality",
+                description:
+                  "Premium ingredients and exceptional preparation in every meal.",
               },
               {
                 icon: Award,
-                title: "Quality",
+                title: "Service",
                 description:
-                  "Only the finest ingredients make it to your plate.",
+                  "15+ years of hospitality excellence at affordable prices.",
               },
             ].map((value) => (
               <div
                 key={value.title}
-                className="text-center p-6 bg-white rounded-lg shadow-md"
+                className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
               >
                 <div className="w-12 h-12 bg-[#E8982E]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-6 h-6 text-[#E8982E]" />
@@ -106,6 +108,21 @@ export default function AboutPage() {
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center bg-[#532516] text-white rounded-lg p-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Let&apos;s Create Something Special
+            </h2>
+            <p className="mb-8 max-w-2xl mx-auto">
+              From intimate family gatherings to grand celebrations, we bring
+              the authentic flavors and warm hospitality of Ethiopian cuisine to
+              your special events.
+            </p>
+            <Button asChild className="bg-[#E8982E] hover:bg-[#E8982E]/90">
+              <Link href="/book">Plan Your Event</Link>
+            </Button>
           </div>
         </div>
       </div>
