@@ -1,30 +1,30 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/liyu-catering';
+const MONGODB_URI = process.env.MONGODB_URI;
 
-let cached = (global as any).mongoose;
+let cached = (global as any).mongoose || { conn: null, promise: null };
 
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
-}
+export const connectDB = async () => {
+  if (cached.conn) return cached.conn;
 
-export async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
-      return mongoose;
-    });
+  if (!MONGODB_URI) {
+    console.error("MONGODB_URI is missing from environment variables");
+    return;
   }
 
   try {
-    cached.conn = await cached.promise;
-  } catch (e) {
-    cached.promise = null;
-    throw e;
-  }
+    cached.promise =
+      cached.promise ||
+      mongoose.connect(MONGODB_URI, {
+        dbName: "Liyu-catering",
+        bufferCommands: false,
+      });
 
-  return cached.conn;
-}
+    cached.conn = await cached.promise;
+    console.log("Connected to MongoDB successfully");
+    return cached.conn;
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
+    throw error;
+  }
+};

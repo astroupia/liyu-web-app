@@ -50,7 +50,7 @@ export default function BookPage() {
                   </Button>
                 </div>
               ) : (
-                <BookingForm onSubmit={handleSubmit} />
+                <BookingForm onSubmithandler={handleSubmit} />
               )}
             </Card>
 

@@ -1,56 +1,73 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { useState } from 'react';
+} from "@/components/ui/select";
+import { useState } from "react";
+import { createBooking } from "@/lib/actions/booking.actions"; // Import the createBooking function
+import { IBooking } from "@/lib/models/booking";
 
 interface BookingFormProps {
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmithandler: (e: React.FormEvent) => void;
 }
 
-export function BookingForm({ onSubmit }: BookingFormProps) {
+export function BookingForm({ onSubmithandler }: BookingFormProps) {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    eventDate: '',
-    guestCount: '',
-    details: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    eventType: "",
+    eventDate: "",
+    guestCount: "",
+    details: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/bookings', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const bookingData: IBooking = {
+        ...formData,
+        eventDate: new Date(formData.eventDate),
+        guestCount: parseInt(formData.guestCount),
+        status: "pending",
+        createdAt: new Date(),
+      };
 
-      if (response.ok) {
-        onSubmit(e);
+      const savedBooking = await createBooking(bookingData);
+      if (savedBooking) {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          eventType: "",
+          eventDate: "",
+          guestCount: "",
+          details: "",
+        });
+        alert("Booking submitted successfully!");
+        onSubmithandler(e);
       } else {
-        alert('Failed to submit booking. Please try again.');
+        alert("Failed to submit booking. Please try again.");
       }
     } catch (error) {
-      alert('An error occurred. Please try again.');
+      console.error("Booking error:", error);
+      alert("An error occurred. Please try again.");
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
@@ -163,10 +180,7 @@ export function BookingForm({ onSubmit }: BookingFormProps) {
         />
       </div>
 
-      <Button
-        type="submit"
-        className="w-full bg-[#E8982E] hover:bg-[#532516]"
-      >
+      <Button type="submit" className="w-full bg-[#E8982E] hover:bg-[#532516]">
         Submit Request
       </Button>
     </form>

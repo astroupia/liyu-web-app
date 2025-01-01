@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -11,10 +11,28 @@ const bookingSchema = new mongoose.Schema({
   details: String,
   status: {
     type: String,
-    enum: ['pending', 'confirmed', 'cancelled'],
-    default: 'pending'
+    enum: ["pending", "confirmed", "cancelled"],
+    default: "pending",
   },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
 });
 
-export const Booking = mongoose.models.Booking || mongoose.model('Booking', bookingSchema);
+// Fix for "Booking" model initialization
+const Booking =
+  (mongoose.models?.Booking as mongoose.Model<IBooking>) ||
+  mongoose.model("Booking", bookingSchema);
+
+export { Booking };
+
+export interface IBooking {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  eventType: string;
+  eventDate: Date;
+  guestCount: number;
+  details?: string;
+  status: "pending" | "confirmed" | "cancelled";
+  createdAt: Date;
+}
