@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { Navbar } from '@/components/layout/navbar';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Check } from 'lucide-react';
-import { PACKAGES } from '@/lib/constants';
-import Link from 'next/link';
+import { Navbar } from "@/components/layout/navbar";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Check } from "lucide-react";
+import { PACKAGES } from "@/lib/constants";
+import Link from "next/link";
 
 export default function PackagesPage() {
   return (
@@ -18,8 +18,8 @@ export default function PackagesPage() {
               Our Catering Packages
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose from our carefully curated packages designed to meet your specific needs
-              and make your event extraordinary.
+              Choose from our carefully curated packages designed to meet your
+              specific needs and make your event extraordinary.
             </p>
           </div>
 
@@ -29,8 +29,8 @@ export default function PackagesPage() {
                 key={pkg.name}
                 className={`relative p-8 ${
                   pkg.featured
-                    ? 'border-[#E8982E] border-2 shadow-lg'
-                    : 'border-gray-200'
+                    ? "border-[#E8982E] border-2 shadow-lg"
+                    : "border-gray-200"
                 }`}
               >
                 {pkg.featured && (
@@ -43,12 +43,12 @@ export default function PackagesPage() {
                     {pkg.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center">
+                  {/* <div className="flex items-baseline justify-center">
                     <span className="text-4xl font-bold text-[#532516]">
                       ${pkg.price}
                     </span>
                     <span className="text-gray-600 ml-2">/person</span>
-                  </div>
+                  </div> */}
                 </div>
 
                 <ul className="space-y-4 mb-8">
@@ -64,8 +64,8 @@ export default function PackagesPage() {
                   asChild
                   className={`w-full ${
                     pkg.featured
-                      ? 'bg-[#E8982E] hover:bg-[#532516]'
-                      : 'bg-[#532516] hover:bg-[#E8982E]'
+                      ? "bg-[#E8982E] hover:bg-[#532516]"
+                      : "bg-[#532516] hover:bg-[#E8982E]"
                   }`}
                 >
                   <Link href="/book">Book Now</Link>
