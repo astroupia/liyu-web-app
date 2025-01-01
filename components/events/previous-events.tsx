@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { PREVIOUS_EVENTS } from "@/lib/constants";
 import { Calendar, Quote } from "lucide-react";
+import Image from "next/image";
+import EventOne from "@/public/assets/images/event 1.JPG";
 
 export function PreviousEvents() {
   return (
@@ -19,14 +21,14 @@ export function PreviousEvents() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PREVIOUS_EVENTS.map((event) => (
             <Card key={event.title} className="overflow-hidden">
-              <div
-                className="h-48 w-full"
-                style={{
-                  backgroundImage: `url(${event.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+              <Image
+                src={event.image}
+                width={300}
+                height={200}
+                alt="Event Image"
+                className="object-cover w-full h-48 rounded-lg"
               />
+
               <div className="p-6">
                 <div className="flex items-center mb-4">
                   <Calendar className="w-5 h-5 text-[#E8982E] mr-2" />

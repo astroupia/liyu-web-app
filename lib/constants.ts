@@ -5,6 +5,9 @@ export const NAVIGATION_ITEMS = [
   { name: "About", href: "/about" },
   { name: "Book Now", href: "/book" },
 ];
+import EventOne from "@/public/assets/images/event 1.png";
+import EventTwo from "@/public/assets/images/event 2.png";
+import EventThree from "@/public/assets/images/event 3.png";
 
 export const PACKAGES = [
   {
@@ -82,30 +85,26 @@ export const EVENT_TYPES = [
 
 export const PREVIOUS_EVENTS = [
   {
-    title: "Annual Tech Conference",
+    title: "Children Birthday",
     date: "March 2024",
-    image:
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3",
-    description:
-      "Catered for 500+ tech professionals with a modern fusion menu.",
+    image: EventTwo,
+    description: "Catered for 50+ kids and family with a tradtitional menu.",
     testimonial:
       "The food was exceptional and the service impeccable. Highly recommended!",
-    client: "TechCorp Inc.",
+    client: "Kid's Mom",
   },
   {
     title: "Garden Wedding",
     date: "February 2024",
-    image:
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3",
+    image: EventOne,
     description: "An intimate garden wedding with custom farm-to-table menu.",
     testimonial: "Liyu Catering made our special day even more magical.",
     client: "Sarah & James",
   },
   {
-    title: "Charity Gala",
+    title: "Charity Gathering",
     date: "January 2024",
-    image:
-      "https://images.unsplash.com/photo-1515169273894-7e876dcf13da?ixlib=rb-4.0.3",
+    image: EventThree,
     description: "Elegant five-course dinner service for 300 guests.",
     testimonial: "Professional service that exceeded our expectations.",
     client: "Hope Foundation",
