@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { PREVIOUS_EVENTS } from "@/lib/constants";
 import { Calendar, Quote } from "lucide-react";
 import Image from "next/image";
-import EventOne from "@/public/assets/images/event 1.JPG";
 
 export function PreviousEvents() {
   return (
