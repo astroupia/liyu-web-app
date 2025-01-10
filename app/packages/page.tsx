@@ -59,7 +59,6 @@ export default function PackagesPage() {
                     </li>
                   ))}
                 </ul>
-
                 <Button
                   asChild
                   className={`w-full ${
