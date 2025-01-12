@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/card';
+import { Card } from "@/components/ui/card";
 
 export function ContactInfo() {
   return (
@@ -8,7 +8,7 @@ export function ContactInfo() {
       </h2>
       <div className="space-y-4 text-gray-600">
         <p>Email: contact@liyucatering.com</p>
-        <p>Phone: (555) 123-4567</p>
+        <p>Phone: (619) 623-2122</p>
         <p>Hours: Monday - Friday: 9:00 AM - 6:00 PM</p>
       </div>
     </Card>

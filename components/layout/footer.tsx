@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
-import { NAVIGATION_ITEMS } from '@/lib/constants';
+import Link from "next/link";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import { NAVIGATION_ITEMS } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -11,10 +11,13 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <span className="text-2xl font-bold">Liyu</span>
-              <span className="text-[#E8982E] text-2xl font-bold">Catering</span>
+              <span className="text-[#E8982E] text-2xl font-bold">
+                Catering
+              </span>
             </div>
             <p className="text-gray-300">
-              Crafting memorable experiences through exceptional catering services.
+              Crafting memorable experiences through exceptional catering
+              services.
             </p>
           </div>
 
@@ -40,9 +43,8 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-300">
               <li>contact@liyucatering.com</li>
-              <li>(555) 123-4567</li>
-              <li>123 Catering Street</li>
-              <li>Culinary City, CC 12345</li>
+              <li>(619) 623-2122</li>
+              <li>San Diego, California</li>
             </ul>
           </div>
 
@@ -73,7 +75,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>© {new Date().getFullYear()} Liyu Catering. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Liyu Catering. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
