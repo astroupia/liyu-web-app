@@ -26,6 +26,8 @@ export function PreviousEvents() {
                 height={200}
                 alt="Event Image"
                 className="object-cover w-full h-48 rounded-lg"
+                unoptimized
+                priority
               />
 
               <div className="p-6">
