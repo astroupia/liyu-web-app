@@ -14,8 +14,6 @@ export function HeroSection() {
           alt="Hero Image"
           fill
           style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3")',
             objectFit: "cover",
             objectPosition: "center",
           }}
