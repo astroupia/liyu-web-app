@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Utensils, Heart, Globe, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import imgAbout from "../../public/assets/images/about.jpg";
 
 export default function AboutPage() {
   return (
@@ -23,14 +22,23 @@ export default function AboutPage() {
 
           {/* Founder Story */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="relative h-[500px] rounded-lg overflow-hidden" />
+            {/* <div
+              className="relative h-[500px] rounded-lg overflow-hidden"
+              style={{
+                backgroundImage: 'url("../../public/assets/images/about.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            /> */}
             <Image
-              src={imgAbout}
-              height={100}
-              width={100}
-              alt="About page of the Chef"
+              src="/assets/images/about.jpg"
+              alt="About Us page Picture of the Chef"
+              width={550}
+              height={500}
+              className="rounded-lg object-cover"
+              priority
+              unoptimized
             />
-
             <div>
               <h2 className="text-3xl font-bold text-[#532516] mb-6">
                 Meet Hiwot Zikie
