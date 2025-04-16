@@ -19,7 +19,6 @@ export const PACKAGES = [
       "Basic menu selection",
       "Standard setup",
       "4-hour service",
-      "Basic decoration",
     ],
   },
   {
@@ -31,7 +30,6 @@ export const PACKAGES = [
       "Extended menu selection",
       "Premium setup",
       "6-hour service",
-      "Enhanced decoration",
       "Dedicated event coordinator",
     ],
     featured: true,
@@ -41,13 +39,11 @@ export const PACKAGES = [
     price: 75,
     description: "For grand celebrations",
     features: [
-      "Up to 200 guests",
+      "200 +",
       "Full menu customization",
       "Luxury setup",
       "8-hour service",
-      "Premium decoration",
       "Dedicated team",
-      "Bar service",
     ],
   },
 ];
@@ -99,7 +95,7 @@ export const PREVIOUS_EVENTS = [
     image: EventOne,
     description: "An intimate garden wedding with custom farm-to-table menu.",
     testimonial: "Liyu Catering made our special day even more magical.",
-    client: "Sarah & James",
+    client: "Betelhem & Nahom",
   },
   {
     title: "Charity Gathering",
