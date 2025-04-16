@@ -7,7 +7,7 @@ export const NAVIGATION_ITEMS = [
 ];
 import EventOne from "@/public/assets/images/event 1.png";
 import EventTwo from "@/public/assets/images/event 2.png";
-import EventThree from "@/public/assets/images/event 3.png";
+import EventThree from "@/public/assets/images/event 4.png";
 
 export const PACKAGES = [
   {

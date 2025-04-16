@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, FolderCode, Instagram, Twitter } from "lucide-react";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -74,11 +75,36 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>
-            © {new Date().getFullYear()} Liyu Catering. All rights reserved.
-          </p>
-        </div>
+        <div className="flex flex-col items-center justify-center border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                  <p className="mb-4">
+                    © {new Date().getFullYear()} Liyu Catering. All rights reserved.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <Link
+                      href="https://sydek.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors"
+                    >
+                      <FolderCode className="h-4 w-4 text-white group-hover:scale-110 transition-transform" />
+                      <span>Developed By Sydek</span>
+                    </Link>
+                    <Link
+                      href="https://sydek.dev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                    >
+                      <Image
+                        src="/assets/images/sydek-logo.png"
+                        alt="sydek logo"
+                        width={30}
+                        height={30}
+                        className="rounded-lg opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                      />
+                    </Link>
+                  </div>
+                </div>
       </div>
     </footer>
   );
