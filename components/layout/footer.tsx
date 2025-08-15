@@ -40,14 +40,26 @@ export function Footer() {
           </div>
 
           {/* Contact */}
+        
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>contact@liyucatering.com</li>
-              <li>(619) 623-2122</li>
-              <li>San Diego, California</li>
+              <li>
+                <a href="mailto:contact@liyucatering.com" className="hover:text-white">
+                  contact@liyucatering.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+16196232122" className="hover:text-white">
+                  (619) 623-2122
+                </a>
+              </li>
+              <li>
+                  San Diego, California
+              </li>
             </ul>
           </div>
+
 
           {/* Social */}
           <div>
