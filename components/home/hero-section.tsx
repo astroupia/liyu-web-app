@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import HeroImage from "@/public/assets/images/herosuper2.png";
-import Image from "next/image";
+// import HeroImage from "@/public/assets/images/herosuper2.png";
+// import Image from "next/image";
+import ImageSlider from "./imageslider";
 export function HeroSection() {
   return (
     <div className="relative min-h-screen flex items-center">
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 mt-12"
         style={{ width: "100%", height: "100vh" }}
       >
-        <Image
+
+        <ImageSlider />
+        {/* <Image
           src={HeroImage}
           alt="Hero Image"
           fill
@@ -17,9 +20,8 @@ export function HeroSection() {
             objectFit: "cover",
             objectPosition: "center",
           }}
-        />
+        /> */}
 
-        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">

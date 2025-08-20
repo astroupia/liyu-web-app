@@ -6,8 +6,10 @@ export const NAVIGATION_ITEMS = [
   { name: "Book Now", href: "/book" },
 ];
 import EventOne from "@/public/assets/images/event 1.png";
-import EventTwo from "@/public/assets/images/event 2.png";
-import EventThree from "@/public/assets/images/event 4.png";
+// import EventTwo from "@/public/assets/images/event 2.png";
+import EventThree from "@/public/assets/images/event 3.png";
+import Eventpartiy from "@/public/assets/images/event 4.png";
+import Eventfive from "@/public/assets/images/carity.jpg";
 
 export const PACKAGES = [
   {
@@ -65,10 +67,9 @@ export const EVENT_TYPES = [
   },
   {
     title: "Private Parties",
-    image:
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3",
+    image:Eventpartiy      ,
     description:
-      "Celebrate life&apos;s moments with customized private party catering services.",
+      "Celebrate life's moments with customized private party catering services.",
   },
   {
     title: "Social Gatherings",
@@ -83,7 +84,7 @@ export const PREVIOUS_EVENTS = [
   {
     title: "Children Birthday",
     date: "March 2024",
-    image: EventTwo,
+    image: EventThree,
     description: "Catered for 50+ kids and family with a tradtitional menu.",
     testimonial:
       "The food was exceptional and the service impeccable. Highly recommended!",
@@ -95,12 +96,12 @@ export const PREVIOUS_EVENTS = [
     image: EventOne,
     description: "An intimate garden wedding with custom farm-to-table menu.",
     testimonial: "Liyu Catering made our special day even more magical.",
-    client: "Betelhem & Nahom",
+    client: "Meseret & Dawit",
   },
   {
     title: "Charity Gathering",
     date: "January 2024",
-    image: EventThree,
+    image: Eventfive,
     description: "Elegant five-course dinner service for 300 guests.",
     testimonial: "Professional service that exceeded our expectations.",
     client: "Hope Foundation",
