@@ -20,8 +20,7 @@ export default function ImageSlider() {
       fadeEffect={{ crossFade: true }}
       autoplay={{ delay: 3500, disableOnInteraction: false }}
       loop={true} 
-      className="w-full h-[510px] " 
-      style={{ transitionTimingFunction: "ease-in-out" }} 
+      style={{ transitionTimingFunction: "ease-in-out",width: "100%", height: "100vh" }} 
     >
       <SwiperSlide>
         <Image
